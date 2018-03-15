@@ -11,7 +11,7 @@
     <button v-on:click="greet">Greet</button>
     <button v-on:click="say('hi')">Say hi</button>
     <button v-on:click="say('what')">Say what</button>
-    <button v-on:click="warn('Form cannot be submitted yet.', $event)"></button>
+    <button v-on:click="warn('Form cannot be submitted yet.', $event)">Click</button>
   </div>
 </body>
 </html>
@@ -33,13 +33,12 @@
       say: function (str) {
         alert(str);
       },
-      warn: function (msg, event) {
+      warn: function (message, event) {
+        // now we have access to the native event
         if (event) event.preventDefault()
-        {
-          alert(message);
-        }
+        alert(message);
       }
     }
   });
-  vm.greet();
+  //vm.greet();
 </script>
