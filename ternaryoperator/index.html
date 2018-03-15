@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.min.js"></script>
+</head>
+<body>
+  <div id='app'>
+    {{number<100 ? "no is less than 100" : "number assigned is " + number}}
+  </div>
+</body>
+</html>
+<script>
+  var obj = new Vue({
+    el: "#app",
+    data: {
+      number: 100
+    }
+  });
+</script>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Data binding and use title tag for tooltip</title>
+</head>
+<body>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.min.js"></script>
+  <div id="tooltip">
+    <span v-bind:title="message">Click here a second to see tooltip</span>
+    <div v-bind:id=divid>{{divid}}</div>
+    <a v-bind:href="url">SRaj</a>
+  </div>
+</body>
+</html>
+<script>
+  new Vue({
+    el: '#tooltip',
+    data: {message: 'hey this is tooltip', divid: 1, url: 'http://www.shivrajbadu.com.np'}
+  });
+</script>

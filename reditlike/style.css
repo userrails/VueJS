@@ -1,0 +1,15 @@
+.glyphicon {
+  opacity: 1;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
+}
+
+.glyphicon:hover {
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+.disabled {
+  color: orange;
+}

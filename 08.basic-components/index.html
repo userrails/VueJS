@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Component Example</title>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.min.js"></script>
+</head>
+<body>
+  <div id="main-header">
+    <main-header></main-header>
+  </div>
+  <div id="greeting">
+    <greeting></greeting>
+  </div>
+  <div id="todo">
+    <todo></todo>
+  </div>
+  <div id="mainfooter">
+    <main-footer></main-footer>
+  </div>
+  <div id="complex-section1">
+      <signup></signup>
+  </div>
+  <template id="signup-template">
+    <h1>You are now working on rendering complex template!</h1>
+    <button>login</button>
+    <button>signup</button>
+    <a href="http://shivrajbadu.com.np">Check out my profile!</a>
+  </template>
+</body>
+</html>
+
+<script>
+  Vue.component('main-header', {
+    template: '<h1>My website name, logo & menus will be here</h1>\
+    '
+  });
+
+  Vue.component('greeting', {
+    template: '<h2>Welcome to my website!</h2>'
+  });
+
+  Vue.component('todo', {
+    template: '<h2>My Daily works:</h2>\
+      <ul>\
+      <li>wakeup</li> \
+      <li>brushing</li>\
+      <li>bathing</li>\
+      <li>breakfast</li>\
+      <li>lunch</li>\
+      <li>Work</li>\
+      </ul>\
+    '
+  });
+
+  Vue.component('main-footer', {
+    template: '<div><p>This is footer section</p></div>'
+  });
+
+  var mainheader = new Vue({
+    el: '#main-header'
+  });
+
+  var greeting = new Vue({
+    el: '#greeting'
+  });
+
+  // create a new Vue instance and mount it to our div element above with the id of app
+  var todo = new Vue({
+    el: '#todo'
+  });
+
+  var mainfooter = new Vue({
+    el: '#mainfooter'
+  });
+
+  Vue.component("signup", {
+    template: "#signup-template"
+  });
+
+  var complexsection = new Vue({
+    el: '#complex-section1'
+  });
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Component using props</title>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <ol>
+      <userlist
+        v-for="user in usersList"
+        v-bind:userobj="user"
+        v-bind:id="user.id"
+        >
+      </userlist>  
+    </ol>
+  </div>
+</body>
+</html>
+
+<script>
+  Vue.component("userlist", {
+    props: ['userobj'],
+    template: '<li id="{{userobj.id}}">{{userobj.name}}</li>'
+  });
+
+  var app = new Vue({
+    el: '#app', 
+    data: {
+      usersList: [
+        {id: 0, name: 'shiv'},
+        {id: 1, name: 'pushpa'},
+        {id: 2, name: 'ram'},
+        {id: 3, name: 'shyam'},
+        {id: 4, name: 'hari'}
+      ]
+    }
+  });
+</script>

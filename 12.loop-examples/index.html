@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Loop in property of an object</title>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.min.js"></script>
+</head>
+<body>
+  <ul id="v-for-object">
+    <hr>
+    <li v-for="(key, value) in object">{{key}} : {{value}}</li>
+    <hr>
+    <li v-for="user in users">{{user.name}}</li>
+    <hr> Even Numbers
+    <li v-for="no in even(numbers)">{{no}}</li>
+    <hr> Odd Numbers
+    <li v-for="no in odd(numbers)">{{no}}</li>
+    <hr> Range example
+    <li v-for="n in 10">{{n}}</li>
+  </ul>
+</body>
+</html>
+
+<script>
+  var vm = new Vue({
+    el: '#v-for-object',
+    data: {
+      object: {firstName: 'shiv', lastName: 'raj', age: 30},
+      users: [{name: 'ram'}, {name: 'a'}, {name: 'b'}, {name: 'c'}],
+      numbers: [1, 2, 3, 4, 5]
+    },
+    methods: {
+      even: function (numbers) {
+        return numbers.filter(function (number) {
+          return number % 2 === 0
+        })
+      },
+      odd: function (numbers) {
+        return numbers.filter(function (number) {
+          return number % 2 != 0
+        })
+      }
+    }
+  });
+  vm.users.reverse();
+  vm.users.pop();
+  vm.users.push({name: 'Baz'});
+  vm.numbers.push(500);
+</script>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <p>{{message}}</p>
+    <input type="text" name="name" v-model="message" />
+  </div>
+</body>
+</html>
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {message: 'data binding example'}
+  });
+</script>

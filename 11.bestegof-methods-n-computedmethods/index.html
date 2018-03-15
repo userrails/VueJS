@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div>Value: a = {{a}}</div>
+    <div>Value: b (a+100) = {{b}}</div>
+    <a href="#" v-on:click="counter_incr">Increment</a>
+    <a href="#" v-on:click="counter_decr">Decrement</a>
+    <!--disabled is button attribute-->
+    <button v-bind:disabled="when5">Disable button when value reached 5 </button>
+  <div>
+    <ul>
+    <li v-for="(x, y) in users">
+       {{x}} {{y.name}}
+    </li>
+    </ul>
+  </div>
+  </div>
+</body>
+</html>
+
+<script>
+  var vm = new Vue({
+    el: '#app',
+    data: {a: 1, users: [{name: 'x'}, {name: 'y'}]},
+    methods: {
+      counter_incr: function () {
+        this.a = this.a + 1;
+      },
+      counter_decr: function () {
+        this.a = this.a - 1;
+      }
+    },
+    computed: {
+      when5: function () {
+        return this.a == 5;
+      },
+      b: function () {
+        return this.a + 100;
+      }
+    }
+  });
+</script>

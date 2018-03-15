@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>String interpolation</title>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.min.js"></script>
+</head>
+<body>
+  <h1>String interpolation example</h1>
+  <h1>My name is: {{name | capitalize}}</h1>
+  <p>I study at class: {{class}}</p>
+
+  <script>
+    new Vue({
+      el: 'body',
+      data: {name: 'sraj badu', class: 'B.E (CS)'}
+    })
+  </script>
+</body>
+</html>

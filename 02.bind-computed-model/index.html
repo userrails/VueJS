@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.min.js"></script>
+    <form action="#">
+      <div>
+        <label  for="name">Name</label>
+        <input  type="text" id="name" name="name" v-model="name">
+      </div>
+      <div>
+        <label  for="email">E-mail</label>
+        <input  type="email"  id="email"  name="email" v-model="email">
+      </div>
+      <div><button  type="submit" v-bind:disabled="!isValid">Submit</button></div>
+    </form>
+  </body>
+  <script>
+    new Vue({
+      el: 'body',
+      data: {
+        name: '',
+        email:  ''
+      },
+      computed: {
+        isValid:  function  ()  {
+            return  this.name !=  ''  &&  this.email  !=  ''
+        }
+      }
+    });
+  </script>
+</body>
+</html>

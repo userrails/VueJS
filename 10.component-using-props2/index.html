@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Component using props</title>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <post :title="title" :author="author" :content="content"></post>
+  </div>
+
+    <template id="post-template">
+      <h1>{{title}}</h1>
+      <h4>{{author}}</h4>
+      <p>{{content}}</p>
+    </template>
+</body>
+</html>
+
+<script>
+  Vue.component("post", {
+    template: '#post-template',
+    props: ['title', 'author', 'content']
+  });
+
+  var obj = new Vue({
+    el: '#app',
+    data: {
+      title: 'my first post',
+      author: 'shiv raj',
+      content: 'This may be post description, or long paragraphs.'
+    }
+  });
+</script>

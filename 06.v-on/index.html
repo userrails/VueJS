@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>for loop</title>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <p>{{message}}</p>
+    <p><button v-on:click='reverseMessage'>Reverse Message</button></p>
+  </div>
+</body>
+</html>
+
+<script>
+  var app3 = new Vue({
+    el: '#app',
+    data: {
+      message: 'Button is clicked'
+    },
+    methods: {
+      reverseMessage: function () {
+        this.message = this.message.split('').reverse().join('')
+      }
+    }
+  })
+</script>
