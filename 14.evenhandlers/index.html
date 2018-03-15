@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todo list example using v-for</title>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <button v-on:click="counter += 1">Add 1</button>
+    <p>The button above has been clicked {{counter}} times.</p>
+    <button v-on:click="greet">Greet</button>
+  </div>
+</body>
+</html>
+
+<script>
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      counter: 0,
+      name: 'Vue.js'
+    },
+    methods: {
+      greet: function (event) {
+        alert('Hello' + this.name + '!');
+        if (event) {
+          alert(event.target.tagName)
+        }
+      }
+    }
+  });
+  vm.greet();
+</script>
