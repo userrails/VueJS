@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todo list example using v-for</title>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <input v-model="message" placeholder="Edit me">
+    <p>Message is: {{message}}</p>
+    <hr>
+    <textarea v-model="messages" placeholder="Add multilines"></textarea>
+    <div>Multiline Message is:</div>
+    <br>
+    <p style="white-space: pre-line;">{{messages}}</p>
+    <hr>
+    <input type="checkbox" name="checkbox" id="checkbox" v-model="checked">
+    <label for="checkbox">{{checked}}</label>
+    <hr>
+    <p>Multi checkbox</p>
+    <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+    <label for="jack">Jack</label>
+    <input type="checkbox" id="shiv" value="Shiv" v-model="checkedNames">
+    <label for="shiv">Shiv</label>
+    <input type="checkbox" id="prz" value="Prz" v-model="checkedNames">
+    <label for="jack">Prz</label>
+    <p>CheckedNames is: {{checkedNames}}</p>
+    <hr>
+    <p>Radio buttons</p>
+    <input type="radio" id="yes" value="yes" v-model="choosen">
+    <label for='yes'>yes</label>
+    <input type="radio" id="yes" value="no" v-model="choosen">
+    <label for='no'>no</label>
+    <p>What have you choosen? {{choosen}}</p>
+    <hr>
+    <p>Select Section</p>
+    <select v-model="selected">
+      <option disabled value="">Please select one</option>
+      <option>A</option>
+      <option>B</option>
+      <option>C</option>
+      <option>D</option>
+    </select>
+    <p>Selected: {{selected}}</p>
+  </div>
+</body>
+</html>
+
+<script>
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      checkedNames: [],
+      selected: ''
+    }
+  });
+  //vm.greet();
+</script>
