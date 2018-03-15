@@ -9,6 +9,9 @@
     <button v-on:click="counter += 1">Add 1</button>
     <p>The button above has been clicked {{counter}} times.</p>
     <button v-on:click="greet">Greet</button>
+    <button v-on:click="say('hi')">Say hi</button>
+    <button v-on:click="say('what')">Say what</button>
+    <button v-on:click="warn('Form cannot be submitted yet.', $event)"></button>
   </div>
 </body>
 </html>
@@ -25,6 +28,15 @@
         alert('Hello' + this.name + '!');
         if (event) {
           alert(event.target.tagName)
+        }
+      },
+      say: function (str) {
+        alert(str);
+      },
+      warn: function (msg, event) {
+        if (event) event.preventDefault()
+        {
+          alert(message);
         }
       }
     }
