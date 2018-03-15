@@ -49,9 +49,14 @@
       <option>B</option>
       <option>C</option>
       <option>D</option>
-      <br>
       <p>Selected: {{selected}}</p>
     </select>
+    <hr>
+    <p>Dynamic options rendered with v-for</p>
+    <select v-model="selected">
+      <option v-for="option in options" v-bind:value="option.value">{{option.text}}</option>
+    </select>
+    <p>Selected: {{selected}}</p>
   </div>
 </body>
 </html>
@@ -61,7 +66,12 @@
     el: '#app',
     data: {
       checkedNames: [],
-      selected: ''
+      selected: '',
+      options: [
+        {text: 'one', value: 'A'},
+        {text: 'two', value: 'B'},
+        {text: 'three', value: 'C'}
+      ]
     }
   });
   //vm.greet();
