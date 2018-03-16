@@ -7,6 +7,8 @@
 <body>
   <div id="main-header">
     <main-header></main-header>
+    <local-reg></local-reg>
+    <another-local-reg></another-local-reg>
   </div>
   <div id="greeting">
     <greeting></greeting>
@@ -56,8 +58,20 @@
     template: '<div><p>This is footer section</p></div>'
   });
 
+  var Child = {
+    template: '<div style="color: red">Component can be available in the scope of another instance/component, this is an eg of local registration.</div>'
+  }
+
+  var AnotherChild = {
+    template: '<div style="color: green">This is another component with local registration</div>'
+  }
+
   var mainheader = new Vue({
-    el: '#main-header'
+    el: '#main-header',
+    components: {
+      'local-reg': Child,
+      'another-local-reg': AnotherChild
+    }
   });
 
   var greeting = new Vue({
