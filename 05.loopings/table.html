@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <table v-if="items.length > 0">
+      <tr><td>Sn</td><td>Name</td></tr>
+      <tr v-for="item in items" v-bind:id="item.id">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+      </tr>
+    </table>
+    <p v-else>Oops, no items found.</p>
+  </div>
+</body>
+</html>
+<script>
+  new Vue({
+    el: "#app",
+    data: {
+      items: [
+        {id: 1,
+        name: 'noodles'},
+        {id: 2,
+        name: 'biscuits'}
+      ]
+    }
+  })
+</script>
