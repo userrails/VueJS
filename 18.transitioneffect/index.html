@@ -28,19 +28,34 @@
       </transition>
     </div>
   </div>
+  <div id="demo3">
+    <div clas="css-animation-eg">
+      <p>3. Example on css animation</p>
+      <button @click="show = !show">Toggle show</button>
+      <transition name="bounce">
+        <p v-if="show">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis enim libero, at lacinia diam fermentum id. Pellentesque habitant morbi tristique senectus et netus.</p>
+      </transition>
+    </div>
+  </div>
   <script>
     new Vue({
       el: '#demo',
       data: {
         show: true
       }
-    })
+    });
     new Vue({
       el: '#demo2',
       data: {
         show: true
       }
-    })
+    });
+    new Vue({
+      el: '#demo3',
+      data: {
+        show: true
+      }
+    });
   </script>
   <style>
     /* styles for e.g: 1; begin*/
@@ -51,7 +66,7 @@
       opacity: 0;
     }
     /* styles for e.g: 1; end
-    /* styles for e.g: 1; begin
+    /* styles for e.g: 2; begin
       /*here we will use diff timing functions*/
       .slide-fade-enter-active {
         transition: all .3s ease;
@@ -64,7 +79,26 @@
         transform: translateX(10px);
         opacity: 0;
       }
-    /* styles for e.g: 1; end
+    /* styles for e.g: 2; end*/
+    /* styles for e.g: 3; end*/
+    .bounce-enter-active {
+      animation: bounce-in .5s;
+    }
+    .bounce-leave-active {
+      animation: bounce-in .5s reverse;
+    }
+    @keyframes bounce-in {
+      0% {
+        transform: scale(0);
+      }
+      50% {
+        transform: scale(1.5);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    /* styles for e.g: 3; end*/
   </style>  
 </body>
 </html>
