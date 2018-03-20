@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mixins general example</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <p>{{message}}-{{foo}}</p>
+    <p>{{msg}}-{{bar}}</p>
+  </div>
+</body>
+</html>
+
+<script>
+  var mixin = {
+    data: function () {
+      return {
+        message: 'hello',
+        foo: 'world'
+      }
+    }
+  }
+
+  new Vue({
+    el: '#app',
+    mixins: [mixin],
+    data: function () {
+      return {
+        msg: 'goodbye',
+        bar: 'def'
+      }
+    },
+    created: function () {
+      console.log(this.$data)
+      // => { message: "goodbye", foo: "abc", bar: "def" }
+    }
+  })
+</script>
